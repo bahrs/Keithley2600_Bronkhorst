@@ -1,0 +1,59 @@
+{
+  "segments": [
+    {
+      "duration": 60.0,
+      "ppm_start": 0.0,
+      "ppm_end": 0.0
+    },
+    {
+      "duration": 1200.0,
+      "ppm_start": 0.0,
+      "ppm_end": 20.0
+    },
+    {
+      "duration": 60.0,
+      "ppm_start": 20.0,
+      "ppm_end": 20.0
+    },
+    {
+      "duration": 1200.0,
+      "ppm_start": 20.0,
+      "ppm_end": 0.0
+    },
+    {
+      "duration": 60.0,
+      "ppm_start": 0.0,
+      "ppm_end": 0.0
+    },
+    {
+      "duration": 240.0,
+      "ppm_start": 0.0,
+      "ppm_end": 20.0
+    },
+    {
+      "duration": 60.0,
+      "ppm_start": 20.0,
+      "ppm_end": 20.0
+    },
+    {
+      "duration": 240.0,
+      "ppm_start": 20.0,
+      "ppm_end": 0.0
+    }
+  ],
+  "meta": {
+    "description": "Demo protocol: NO2 0\u219220 ppm ramps at 1 and 5 ppm/min",
+    "ppm_start": 0.0,
+    "ppm_end": 20.0,
+    "speeds_ppm_per_min": [
+      1.0,
+      5.0
+    ],
+    "speed_repeat": 1,
+    "protocol_repeat": 1,
+    "total_flow_sccm": 100.0,
+    "max_flow_sccm": 50.0,
+    "vessel": "NO2",
+    "settle_time_s": 60.0
+  }
+}

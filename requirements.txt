@@ -1,0 +1,5 @@
+pyvisa
+pyserial
+keithley2600
+propar
+pyyaml

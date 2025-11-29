@@ -1,0 +1,57 @@
+experiment:
+  # Where CSV files and protocol JSON are stored
+  data_dir: "data/raw"
+
+  # Save the exact protocol used as JSON alongside the data / in examples
+  save_protocol_json: true
+  protocol_json_dir: "examples"
+
+keithley:
+  # VISA resource string of the 2601B
+  address: "USB0::0x05E6::0x2601::4120420::INSTR"
+
+  # Path to NI VISA library used by the keithley2600 driver
+  visa_library_path: "C:/Windows/System32/visa64.dll"
+
+  # Backend string for pyvisa.ResourceManager
+  visa_backend: "@ivi"
+
+  # Integration time (units unknown) passed to k.set_integration_time()
+  # 0.001 is the minimum, according to Keithley documentation, 
+  # 0.03 yields ~10 Hz data acquisition rate
+  integration_time: 0.01
+
+  # Source voltage applied by KeithleyThread at the start of logging
+  source_voltage: 10.0
+
+mfc:
+  # Serial port hosting the Bronkhorst EL-FLOW devices
+  com_port: "COM12"
+
+  # Node addresses of MFCs on that COM port
+  nodes: [7, 8, 9, 11]
+
+  # Max flow per single MFC (sccm) and total flow through sensor cell (sccm)
+  max_flow_sccm: 50.0
+  total_flow_sccm: 100.0
+
+  # Gas in the calibration cylinder (used inside ppm_to_sp)
+  vessel: "NO2"
+
+# protocol with linear increase 
+protocol:
+  # ppm range to scan
+  ppm_start: 0.0
+  ppm_end: 20.0
+
+  # Ramp speeds in ppm/min (one or more values)
+  speeds_ppm_per_min: [1.0]
+
+  # How many times to repeat each speed
+  speed_repeat: 1
+
+  # How many times to repeat the whole protocol
+  protocol_repeat: 1
+
+  # Equilibration time (in seconds) before moving to next segment, if used
+  settle_time_s: 60.0
