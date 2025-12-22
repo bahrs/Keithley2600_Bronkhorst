@@ -1,16 +1,12 @@
 # PyVISA Data Logger: Keithley 2601B + Bronkhorst EL-FLOW
 
-This repo contains a multithreaded Python data logger for gas-sensing experiments.
+This repo contains a concurrent, multi-threaded data logger with graceful shutdown and error propagation; decoupled I/O and file writing via a bounded queue.
 It controls a Keithley 2601B source meter and Bronkhorst EL-FLOW mass-flow
-controllers via PyVISA, Propar, and PySerial, and streams experiment data to CSV.
-
-The goal is to have a small, configurable “hardware logger” that looks and feels
-like production code: clear modules, config-driven, and easy to reuse in analysis
-notebooks or ML pipelines.
+controllers via PyVISA, Propar, PySerial libs, and streams experiment data to CSV.
 
 ## Features
 
-- Asynchronous logging from multiple devices (one thread per instrument)
+- Concurrent logging from multiple devices (one thread per instrument)
 - SCPI / TSP control of Keithley 2601B via `pyvisa` + `keithley2600`
 - Bronkhorst EL-FLOW flow control with ppm-based protocol builder
 - Autosave to timestamped `data/raw/*.csv` with ISO timestamps
