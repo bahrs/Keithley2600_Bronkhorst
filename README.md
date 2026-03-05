@@ -69,8 +69,8 @@ INSTR_ADDR = "USB0::0x05E6::0x2601::4120420::INSTR"  # adapt to your setup
 resource_manager = pyvisa.ResourceManager("@ivi")
 unknown_instrument = resource_manager.open_resource(INSTR_ADDR)
 print(f"Instrument ID: {unknown_instrument.query("*IDN?").strip()}")
-inst0.close() 
-rm.close()
+unknown_instrument.close() 
+resource_manager.close()
 
 # now check that keithley can connect with the keithley2600 lib correctly
 VISA_LIB_PATH = "C:/Windows/System32/visa64.dll"
